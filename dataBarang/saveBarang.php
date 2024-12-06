@@ -6,15 +6,13 @@ $kodeBarang = $_POST['kodeBarang'];
 $namaBarang = $_POST['namaBarang'];
 $kategori = $_POST['kategori'];
 $harga = $_POST['harga'];
-$jumlah = $_POST['jumlah'];
-
 header('Content-Type: application/json');
 if (!empty($id)) {
     // Update record
-    $query = "UPDATE tabel_barang SET kodeBarang='$kodeBarang', namaBarang='$namaBarang', kategori='$kategori', harga='$harga', jumlah='$jumlah' WHERE id='$id'";
+    $query = "UPDATE tabel_barang SET kodeBarang='$kodeBarang', namaBarang='$namaBarang', kategori='$kategori', harga='$harga'  WHERE id='$id'";
 } else {
     // Insert new record
-    $query = "INSERT INTO tabel_barang (kodeBarang, namaBarang, kategori, harga, jumlah) VALUES ('$kodeBarang', '$namaBarang', '$kategori', '$harga', '$jumlah')";
+    $query = "INSERT INTO tabel_barang (kodeBarang, namaBarang, kategori, harga) VALUES ('$kodeBarang', '$namaBarang', '$kategori', '$harga')";
 }
 
 if ($conn->query($query) === TRUE) {

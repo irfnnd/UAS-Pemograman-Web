@@ -333,7 +333,7 @@
                                 <td>{$row['kategori']}</td>
                                 <td>{$row['harga']}</td>
                                 <td class='aksi'>
-                                    <button class='btn-edit' onclick='editBarang({$row['id']}, \"{$row['kodeBarang']}\", \"{$row['namaBarang']}\", \"{$row['kategori']}\", {$row['harga']}, {$row['jumlah']})'><i class='fas fa-edit'></i></button>
+                                    <button class='btn-edit' onclick='editBarang({$row['id']}, \"{$row['kodeBarang']}\", \"{$row['namaBarang']}\", \"{$row['kategori']}\", {$row['harga']})'><i class='fas fa-edit'></i></button>
                                     <button class='btn-delete' onclick='deleteBarang({$row['id']})'><i class='fas fa-trash-alt'></i></button>
                                 </td>
                             </tr>";
@@ -372,10 +372,6 @@
                         <label for="harga">Harga</label>
                         <input type="number" id="harga" name="harga" required>
                     </div>
-                    <div class="form-group">
-                        <label for="jumlah">Jumlah</label>
-                        <input type="number" id="jumlah" name="jumlah" required>
-                    </div>
                 </div>
                 <div class="bottom-toolbar">
                     <button id="cancelButton"> Batal </button>
@@ -397,7 +393,6 @@
             const namaBarang = document.getElementById('namaBarang');
             const kategori = document.getElementById('kategori');
             const harga = document.getElementById('harga');
-            const jumlah = document.getElementById('jumlah');
             const searchInput = document.getElementById('searchInput');
             const barangTable = document.getElementById('barangTable').getElementsByTagName('tbody')[0];
 
@@ -424,13 +419,12 @@
             }
 
             // Edit Barang function
-            window.editBarang = function (id, kode, nama, kategoriValue, hargaValue, jumlahValue) {
+            window.editBarang = function (id, kode, nama, kategoriValue, hargaValue) {
                 barangId.value = id;
                 kodeBarang.value = kode;
                 namaBarang.value = nama;
                 kategori.value = kategoriValue;
                 harga.value = hargaValue;
-                jumlah.value = jumlahValue;
                 modal.style.display = 'block';
             }
 

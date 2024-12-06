@@ -1,7 +1,7 @@
 <?php
 include 'koneksi.php'; // Your database connection file
 
-$id = $_POST['id'];
+$id = $_POST['user_id'];
 $nama = $_POST['nama'];
 $username = $_POST['username'];
 $password = $_POST['password'];
